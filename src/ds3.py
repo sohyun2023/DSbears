@@ -205,7 +205,7 @@ best_model = model._trainer.load_model(best_model)
 # '예측' 버튼 클릭
 if st.button('GO⚾️'):
     # spec 값을 예측
-    prediction = model.predict(processed_data,model=best_model)
+    prediction = best_model.predict(processed_data)
 
     # 사용자로부터 입력 받은 경기장 이름
     stadium_name = stadium_x
