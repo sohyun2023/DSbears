@@ -2,7 +2,7 @@ accelerate==0.21.0
 aiohttp-cors==0.7.0
 aliyun-python-sdk-core==2.15.0
 aliyun-python-sdk-kms==2.16.2
-altair @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_a8x4081_4h/croot/altair_1687526044471/work
+altair==4.1.0
 antlr4-python3-runtime==4.9.3
 anyio @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_a17a7759g2/croot/anyio_1706220182417/work
 appnope @ file:///Users/ktietz/demo/mc3/conda-bld/appnope_1629146036738/work
