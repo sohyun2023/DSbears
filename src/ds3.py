@@ -1,5 +1,4 @@
-# src/ds3.py
-pip install autogluon
+
 
 import streamlit as st
 import pandas as pd
