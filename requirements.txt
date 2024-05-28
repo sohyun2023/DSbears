@@ -1,0 +1,5 @@
+streamlit version: 1.32.0
+pandas version: 2.1.4
+numpy version: 1.26.4
+autogluon version: autogluon
+scikit-learn version: 1.4.2
