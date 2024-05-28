@@ -16,7 +16,7 @@ def get_base64_image(image_path):
         return base64.b64encode(img_file.read()).decode()
 
 # 배경경로
-background_path = '/Users/sohyeon/Desktop/DSbears/data/잠실구장배경사진.png'
+background_path = 'data/잠실구장배경사진.png'
 
 # Encode the background image to base64
 background_base64 = get_base64_image(background_path)
@@ -104,7 +104,7 @@ st.markdown(background_html, unsafe_allow_html=True)
 st.markdown('<h1 class="centered-title">⚾️ KBO 리그 경기 예상 관중 수 예측 ⚾️</h1>', unsafe_allow_html=True)
 
 # 로고 이미지 경로
-logo_path = '/Users/sohyeon/Desktop/DSbears/data/두산사데연로고.png'
+logo_path = 'data/두산사데연로고.png'
 st.markdown(f'<div class="center-logo"><img src="data:image/png;base64,{get_base64_image(logo_path)}" width="400"/></div>', unsafe_allow_html=True)
 
 # 매핑 사전 정의
