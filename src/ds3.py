@@ -196,7 +196,7 @@ def preprocess_data_fixed(data):
 processed_data = preprocess_data_fixed(input_data)
 
 # Autogluon 모델 로드
-model = TabularPredictor.load('/Users/sohyeon/Desktop/DSbears/models/ag-20240521_003925')
+model = TabularPredictor.load('models/ag-20240521_003925')
 # Get the best model name
 best_model = model.get_model_best()
 
