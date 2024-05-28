@@ -200,7 +200,8 @@ processed_data = preprocess_data_fixed(input_data)
 model = TabularPredictor.load('models/ag-20240521_003925')
 # Get the best model name
 best_model = model.get_model_best()
-
+# Extract the best model
+best_model = predictor._trainer.load_model(best_model)
 # '예측' 버튼 클릭
 if st.button('GO⚾️'):
     # spec 값을 예측
