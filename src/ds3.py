@@ -3,6 +3,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import autogluon
 from autogluon.tabular import TabularPredictor
 from sklearn.preprocessing import OneHotEncoder
 import base64
