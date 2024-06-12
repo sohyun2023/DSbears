@@ -197,7 +197,7 @@ def preprocess_data_fixed(data):
 processed_data = preprocess_data_fixed(input_data)
 
 # Autogluon 모델 로드
-model = TabularPredictor.load('models/ag-20240521_003925')
+model = TabularPredictor.load('models/ag-20240612_035142')
 # Get the best model name
 best_model = model.get_model_best()
 # Extract the best model
@@ -205,34 +205,45 @@ best_model = model._trainer.load_model(best_model)
 # '예측' 버튼 클릭
 if st.button('GO⚾️'):
     # spec 값을 예측
-    prediction = best_model.predict(processed_data)
+    prediction = model.predict(processed_data)
 
     # 사용자로부터 입력 받은 경기장 이름
     stadium_name = stadium_x
 
     # 해당 경기장의 실제 관중석 규모
     stadium_capacity = {
-        '대구 삼성 라이온즈 파크': 24000,
-        '대전 한화생명 이글스파크': 13000,
-        '마산': 11000,
-        '부산 사직 야구장': 23500,
-        '서울 잠실 야구장': 25000,
-        '울산문수야구장': 12050,
-        '창원NC파크': 22000,
-        '청주야구장': 9580,
-        '포항야구장': 12000,
-        '광주-기아 챔피언스 필드': 20500,
-        '인천SSG 랜더스필드': 23000,
-        '서울고척스카이돔': 17000,
-        '수원케이티위즈파크': 20000
+        '대구 삼성 라이온즈 파크': 20000,
+        '대전 한화생명 이글스파크': 12000,
+        '마산': 1000,
+        '부산 사직 야구장': 20000,
+        '서울 잠실 야구장': 22000,
+        '울산문수야구장': 10000,
+        '창원NC파크': 20000,
+        '청주야구장': 9000,
+        '포항야구장': 10000,
+        '광주-기아 챔피언스 필드': 20000,
+        '인천SSG 랜더스필드': 20000,
+        '서울고척스카이돔': 14000,
+        '수원케이티위즈파크': 19000
     }
 
-    # 실제 관중 수 계산
+        # 실제 관중 수 계산
     if stadium_name in stadium_capacity:
         actual_attendance = prediction.iloc[0] * stadium_capacity[stadium_name]
-        result_text = f'{stadium_name} 경기장의 예상 관중 수:<br>{actual_attendance:.0f}'
+        
+        # Error margin calculation
+        if actual_attendance < 10000:
+            lower_bound = actual_attendance - 400
+            upper_bound = actual_attendance + 400
+        else:
+            lower_bound = actual_attendance - 700
+            upper_bound = actual_attendance + 700
+            
+        result_text = f'서울 잠실 야구장의 예상 관중 수:<br>{lower_bound:.0f}~{upper_bound:.0f}'
     else:
         result_text = '해당하는 경기장 이름을 찾을 수 없습니다.'
 
     # 결과 표시
     st.markdown(f'<div class="prediction-result">{result_text}</div>', unsafe_allow_html=True)
+    
+    
