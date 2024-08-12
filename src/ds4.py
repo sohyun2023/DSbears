@@ -176,7 +176,7 @@ input_data = pd.DataFrame({
 from sklearn.preprocessing import OneHotEncoder
 # XGBoost 모델 로드
 xgb_model = xgb.XGBRegressor()
-xgb_model.load_model('/Users/sohyeon/Desktop/hyun/project/두산베어즈/xgboost_0812.json') 
+xgb_model.load_model('data/xgboost_0812.json') 
 model_feature_names = xgb_model.get_booster().feature_names
 
 def preprocess_data_fixed(data):
@@ -227,7 +227,7 @@ processed_data = preprocess_data_fixed(input_data)
 
 # XGBoost 모델 로드
 xgb_model = xgb.XGBRegressor()
-xgb_model.load_model('/Users/sohyeon/Desktop/hyun/project/두산베어즈/xgboost_0812.json')  # 모델 경로 수정 필요
+xgb_model.load_model('data/xgboost_0812.json')  # 모델 경로 수정 필요
 
 
 # '예측' 버튼 클릭
