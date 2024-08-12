@@ -19,7 +19,7 @@ def get_base64_image(image_path):
 
 
 #배경경로
-background_path = '/Users/sohyeon/Desktop/hyun/project/두산베어즈/잠실구장배경사진.png'
+background_path = 'data/잠실구장배경사진.png'
 
 
 # Encode the background image to base64
