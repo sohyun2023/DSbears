@@ -112,7 +112,7 @@ st.markdown('<h1 class="centered-title">⚾️ KBO 리그 경기 예상 관중 �
 
 
 # 로고 이미지 경로
-logo_path = '/Users/sohyeon/Desktop/hyun/project/두산베어즈/두산사데연로고.png'
+logo_path = 'data/두산사데연로고.png'
 st.markdown(f'<div class="center-logo"><img src="data:image/png;base64,{get_base64_image(logo_path)}" width="400"/></div>', unsafe_allow_html=True)
 
 
