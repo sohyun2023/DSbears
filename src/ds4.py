@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import sklearn
-from autogluon.tabular import TabularPredictor
+
 from sklearn.preprocessing import OneHotEncoder
 import base64
-from sklearn.model_selection import GridSearchCV
+
 import xgboost as xgb
 
 # Set the page to wide mode by default
