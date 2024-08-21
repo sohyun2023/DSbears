@@ -2,7 +2,7 @@
 
 psds project #1
 
-Predicting attendance at a baseball game with ML
+Predicting attendance for kbo baseball game with ML
 
-below is link!
+below is link for website!
 👉🏻 https://dsbears-cbti36xzalr5ylowcn2nmb.streamlit.app/
